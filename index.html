@@ -1,156 +1,799 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sri Vari Constructions</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header { background-color: #f4a261; color: white; padding: 20px 10px; text-align: center; }
-        nav { display: flex; justify-content: center; background-color: #264653; padding: 10px; }
-        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
-        section { padding: 20px; text-align: center; }
-        .projects img { width: 100%; max-width: 300px; margin: 10px; }
-        footer { background-color: #264653; color: white; text-align: center; padding: 10px; }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Welcome to Sri Vari Constructions</h1>
-        <p>Building Dreams into Reality</p>
-    </header>
-    <nav>
-        <a href="#about">About Us</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact Us</a>
-    </nav>
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Sri Vari Constructions has been delivering exceptional construction services for over a decade.</p>
-    </section>
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Residential Construction</li>
-            <li>Commercial Buildings</li>
-            <li>Renovation and Remodeling</li>
-            <li>Development</li>
-        </ul>
-    </section>
-    <section id="projects">
-        <h2>Our Projects</h2>
-        <div class="projects">
-            <img src="project1.jpg" alt="Project 1">
-            <img src="project2.jpg" alt="Project 2">
-        </div>
-    </section>
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: kalyan18122002@gmail.com</p>
-        <p>Phone: +91-9866868556</p>
-        <p>Address: Akkayapalem, Visakhapatnam, Andhra Pradesh</p>
-    </section>
-    <footer>
-        <p>&copy; 2025 Sri Vari Constructions. All Rights Reserved.</p>
-    </footer>
-</body>
-</html> -->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sri Vari Constructions</title>
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background: url('background_image.jpg') no-repeat center center fixed; 
-            background-size: cover;
-            color: #fff; /* Ensure text is visible on the background */
+        :root {
+            --bg: #071b2a;
+            --surface: rgba(255, 255, 255, 0.08);
+            --surface-strong: rgba(255, 255, 255, 0.12);
+            --primary: #f4a261;
+            --primary-dark: #d47b35;
+            --text: #f8f9fa;
+            --muted: #cbd5e1;
+            --shadow: 0 18px 55px rgba(0, 0, 0, 0.25);
         }
-        header { 
-            background-color: rgba(244, 162, 97, 0.8); 
-            color: white; 
-            padding: 20px 10px; 
-            text-align: center; 
+
+        * {
+            box-sizing: border-box;
         }
-        nav { 
-            display: flex; 
-            justify-content: center; 
-            background-color: rgba(38, 70, 83, 0.8); 
-            padding: 10px; 
+
+        body {
+            margin: 0;
+            font-family: "Inter", sans-serif;
+            min-height: 100vh;
+            color: var(--text);
+            line-height: 1.6;
+            background: linear-gradient(rgba(7, 27, 42, 0.78), rgba(7, 27, 42, 0.78)),
+                url('background_image.jpg') center/cover fixed no-repeat;
         }
-        nav a { 
-            color: white; 
-            text-decoration: none; 
-            margin: 0 15px; 
-            font-weight: bold; 
+
+        img {
+            max-width: 100%;
+            display: block;
         }
-        section { 
-            padding: 20px; 
-            text-align: center; 
-            background-color: rgba(0, 0, 0, 0.6); 
-            margin: 10px; 
-            border-radius: 10px;
+
+        a {
+            color: inherit;
+            text-decoration: none;
         }
-        .projects img { 
-            width: 100%; 
-            max-width: 300px; 
-            margin: 10px; 
-            border: 2px solid #fff; 
+
+        header {
+            padding: 4rem 1.5rem 2rem;
+            text-align: center;
         }
-        footer { 
-            background-color: rgba(38, 70, 83, 0.8); 
-            color: white; 
-            text-align: center; 
-            padding: 10px; 
+
+        .brand {
+            display: block;
+            margin: 0 auto 1.5rem;
+            max-width: 900px;
+        }
+
+        .brand-title {
+            font-size: clamp(2.75rem, 6vw, 4rem);
+            line-height: 1.05;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin: 0;
+        }
+
+        .brand-tagline {
+            margin-top: 0.75rem;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        .lang-switch {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .lang-button {
+            padding: 0.55rem 1rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text);
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .lang-button.active,
+        .lang-button:hover {
+            background: rgba(244, 162, 97, 0.95);
+            color: #071b2a;
+            border-color: rgba(244, 162, 97, 0.95);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+
+        nav a {
+            padding: 0.7rem 1rem;
+            border-radius: 999px;
+            transition: background 0.2s ease;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .hero {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 2rem 1rem 4rem;
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 32px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
+            margin: 0;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: 1.25rem auto 0;
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        .hero .hero-actions {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.95rem 1.8rem;
+            border-radius: 999px;
+            font-weight: 700;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .button.primary {
+            background: var(--primary);
+            color: #071b2a;
+        }
+
+        .button.outline {
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            color: var(--text);
+        }
+
+        .button:hover {
+            transform: translateY(-1px);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem 3rem;
+        }
+
+        .section {
+            margin-top: 2.5rem;
+            padding: 2rem;
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 32px;
+            box-shadow: var(--shadow);
+        }
+
+        .section h2 {
+            margin-top: 0;
+            font-size: 2rem;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            min-height: 220px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            margin-bottom: 0.85rem;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .projects-grid {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            margin-top: 1.5rem;
+        }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: linear-gradient(180deg, rgba(7, 27, 42, 0.95), rgba(7, 27, 42, 0.8));
+            cursor: pointer;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(244, 162, 97, 0.75);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .project-card .project-info {
+            padding: 1.25rem;
+        }
+
+        .project-card .project-info h3 {
+            margin: 0 0 0.75rem;
+            font-size: 1.35rem;
+        }
+
+        .project-card .project-info p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .project-card .project-meta {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            gap: 0.75rem;
+            color: #d8e3f0;
+            font-size: 0.95rem;
+        }
+
+        .feature-list {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature-item {
+            padding: 1rem;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .feature-item strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .contact-grid {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: 1.4fr 0.9fr;
+            align-items: start;
+            margin-top: 1.5rem;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.75rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .contact-card h3 {
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        .contact-card p {
+            margin: 0.75rem 0;
+            color: var(--muted);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem 1rem 1rem;
+            color: var(--muted);
+        }
+
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            z-index: 50;
+        }
+
+        .modal-backdrop.active {
+            display: flex;
+        }
+
+        .modal {
+            width: min(980px, 100%);
+            max-height: 90vh;
+            overflow: auto;
+            background: #0d2638;
+            border-radius: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: var(--shadow);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .close-button {
+            background: transparent;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .modal-body p,
+        .modal-body li {
+            color: var(--muted);
+        }
+
+        .gallery {
+            display: grid;
+            gap: 0.75rem;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        }
+
+        .gallery img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .project-details {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .project-details strong {
+            display: block;
+            color: var(--text);
+        }
+
+        @media (max-width: 860px) {
+
+            .intro-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card img {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 560px) {
+
+            .hero,
+            .section {
+                border-radius: 24px;
+                padding: 1.5rem;
+            }
+
+            nav {
+                gap: 0.8rem;
+            }
+
+            .modal {
+                max-height: 95vh;
+            }
         }
     </style>
 </head>
+
 <body>
     <header>
-        <h1>Welcome to Sri Vari Constructions</h1>
-        <p>Building Dreams into Reality</p>
-    </header>
-    <nav>
-        <a href="#about">About Us</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact Us</a>
-    </nav>
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Sri Vari Constructions has been delivering exceptional construction services for over a decade.</p>
-    </section>
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Residential Construction</li>
-            <li>Commercial Buildings</li>
-            <li>Renovation and Remodeling</li>
-        </ul>
-    </section>
-    <section id="projects">
-        <h2>Our Projects</h2>
-        <div class="projects">
-            <img src="project1.jpg" alt="Project 1">
-            <img src="project2.jpg" alt="Project 2">
+        <div class="brand">
+            <h1 class="brand-title" data-i18n="brandTitle">Sri Vari Constructions</h1>
+            <div class="brand-tagline" data-i18n="brandTagline">Trusted builders for homes and commercial spaces</div>
+            <div class="lang-switch">
+                <button class="lang-button active" data-lang="en">English</button>
+                <button class="lang-button" data-lang="te">తెలుగు</button>
+            </div>
         </div>
-    </section>
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: thotapallikanakaraju@gmail.com</p>
-        <p>Phone: +91-9866868556</p>
-        <p>Address: Akkayapalem, Visakhapatnam, Andhra Pradesh</p>
-    </section>
-    <footer>
-        <p>&copy; 2025 Sri Vari Constructions. All Rights Reserved.</p>
+        <section class="hero">
+            <h1 data-i18n="heroTitle">Building Dreams into Reality.</h1>
+            <p data-i18n="heroSubtitle">From residential homes to commercial developments, Sri Vari Constructions
+                delivers quality, trust and modern design in every project.</p>
+            <div class="hero-actions">
+                <a class="button primary" id="btnProjects" href="#projects" data-i18n="btnProjects">Our Projects</a>
+                <a class="button outline" id="btnContact" href="#contact" data-i18n="btnContact">Get in Touch</a>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section class="section" id="about">
+            <h2 data-i18n="whoWeAreTitle">Who We Are</h2>
+            <p data-i18n="whoWeAreText">We are Sri Vari Constructions, a Visakhapatnam-based construction company
+                creating premium residential and commercial spaces. Our team combines decades of experience with careful
+                planning, clear communication and strong local relationships.</p>
+            <div class="intro-grid">
+                <div class="card">
+                    <h3 data-i18n="reliableBuildersTitle">Reliable Builders</h3>
+                    <p data-i18n="reliableBuildersText">We handle each phase of construction with precision—from
+                        planning and materials to execution and handover.</p>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="qualityWorkTitle">Quality Work</h3>
+                    <p data-i18n="qualityWorkText">Our construction sites maintain high standards, timely delivery and
+                        professional workmanship for every project.</p>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="customerFocusTitle">Customer Focus</h3>
+                    <p data-i18n="customerFocusText">We listen to your goals, guide you through options, and build
+                        spaces that feel strong, modern and welcoming.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="services">
+            <h2 data-i18n="whatWeBringTitle">What We Bring</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <strong data-i18n="endToEndTitle">End-to-end delivery</strong>
+                    <p data-i18n="endToEndText">Design support, construction planning, execution and final finishing—all
+                        managed by our experienced team.</p>
+                </div>
+                <div class="feature-item">
+                    <strong data-i18n="clearCommunicationTitle">Clear communication</strong>
+                    <p data-i18n="clearCommunicationText">Regular updates, transparent costing and coordination so you
+                        always know what to expect.</p>
+                </div>
+                <div class="feature-item">
+                    <strong data-i18n="trustedWorkmanshipTitle">Trusted workmanship</strong>
+                    <p data-i18n="trustedWorkmanshipText">Strong foundations, modern materials and careful finishing
+                        make every building stand out for durability and style.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="projects">
+            <h2 data-i18n="projectsTitle">Projects We Handle</h2>
+            <p data-i18n="projectsIntro">Click any project to see location details and image previews. Replace the
+                placeholder images with your own project photos when available.</p>
+            <div class="projects-grid">
+                <div class="project-card" data-project="building1">
+                    <img src="building-1-hero.jpg" alt="Building 1 project preview" />
+                    <div class="project-info">
+                        <h3 data-i18n="building1Title">Building 1</h3>
+                        <p data-i18n="building1Desc">Residential complex with modern architecture and premium finishes.
+                        </p>
+                        <div class="project-meta">
+                            <span><strong data-i18n="locationLabel">Location:</strong> <span
+                                    data-i18n="building1Location">Visakhapatnam</span></span>
+                            <span><strong data-i18n="typeLabel">Type:</strong> <span
+                                    data-i18n="building1Type">Residential</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-project="building2">
+                    <img src="building-2-hero.jpg" alt="Building 2 project preview" />
+                    <div class="project-info">
+                        <h3 data-i18n="building2Title">Building 2</h3>
+                        <p data-i18n="building2Desc">Commercial building crafted for strong presence and professional
+                            spaces.</p>
+                        <div class="project-meta">
+                            <span><strong data-i18n="locationLabel">Location:</strong> <span
+                                    data-i18n="building2Location">Akkayapalem</span></span>
+                            <span><strong data-i18n="typeLabel">Type:</strong> <span
+                                    data-i18n="building2Type">Commercial</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-project="building3">
+                    <img src="building-3-hero.jpg" alt="Building 3 project preview" />
+                    <div class="project-info">
+                        <h3 data-i18n="building3Title">Building 3</h3>
+                        <p data-i18n="building3Desc">Renovation project with elegant design and high-quality
+                            construction.</p>
+                        <div class="project-meta">
+                            <span><strong data-i18n="locationLabel">Location:</strong> <span
+                                    data-i18n="building3Location">Visakhapatnam</span></span>
+                            <span><strong data-i18n="typeLabel">Type:</strong> <span
+                                    data-i18n="building3Type">Renovation</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <h2 data-i18n="contactTitle">Contact</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3 data-i18n="getInTouchTitle">Get in touch</h3>
+                    <p data-i18n="getInTouchText">Please contact us for estimates, consultations, and project inquiries.
+                    </p>
+                    <p><strong data-i18n="emailLabel">Email:</strong> thotapallikanakaraju@gmail.com</p>
+                    <p><strong data-i18n="phoneLabel">Phone:</strong> +91-9866868556</p>
+                    <p><strong data-i18n="addressLabel">Address:</strong> Akkayapalem, Visakhapatnam, Andhra Pradesh</p>
+                </div>
+                <div class="contact-card">
+                    <h3 data-i18n="projectDetailsTitle">Project details</h3>
+                    <p data-i18n="projectDetailsText">Tell us what you want to build and we will propose the right plan,
+                        schedule, and budget for your site.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Sri Vari Constructions. All rights reserved.</p>
     </footer>
+
+    <div class="modal-backdrop" id="projectModal">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal-header">
+                <div>
+                    <h3 id="modalTitle">Project Name</h3>
+                    <p id="modalLocation" data-i18n="modalLocationHeading"
+                        style="color: var(--muted); margin: 0.3rem 0 0;">Location details</p>
+                </div>
+                <button class="close-button" id="modalClose" aria-label="Close project details">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="project-details">
+                    <p id="modalDescription">Project description and summary go here. This area explains the scope,
+                        location and quality of the project so visitors immediately know what we built.</p>
+                    <p><strong data-i18n="modalLocationLabel">Project location:</strong> <span
+                            id="modalCity">Visakhapatnam</span></p>
+                    <p><strong data-i18n="modalTypeLabel">Project type:</strong> <span id="modalTypeValue">Residential /
+                            Commercial</span></p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 0.75rem;">Photo Gallery</h4>
+                    <div class="gallery" id="modalGallery"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const projects = {
+            building1: {
+                name: 'Building 1',
+                location: 'Visakhapatnam',
+                type: 'Residential',
+                description: 'A modern residential building with thoughtful layout, premium finishes, and a strong focus on quality construction. Visitors can explore multiple interior and exterior views of this project.',
+                images: [
+                    'building-1-1.jpg',
+                    'building-1-2.jpg',
+                    'building-1-3.jpg'
+                ]
+            },
+            building2: {
+                name: 'Building 2',
+                location: 'Akkayapalem, Visakhapatnam',
+                type: 'Commercial',
+                description: 'A commercial property built for high visibility and functionality. This project showcases reliable structure, strong design, and smart use of space.',
+                images: [
+                    'building-2-1.jpg',
+                    'building-2-2.jpg',
+                    'building-2-3.jpg'
+                ]
+            },
+            building3: {
+                name: 'Building 3',
+                location: 'Visakhapatnam',
+                type: 'Renovation',
+                description: 'A renovation project that transformed an existing building into a refreshed, modern space with quality workmanship and careful attention to detail.',
+                images: [
+                    'building-3-1.jpg',
+                    'building-3-2.jpg',
+                    'building-3-3.jpg'
+                ]
+            }
+        };
+
+        const translations = {
+            en: {
+                brandTitle: 'Sri Vari Constructions',
+                brandTagline: 'Trusted builders for homes and commercial spaces',
+                heroTitle: 'Building Dreams into Reality.',
+                heroSubtitle: 'From residential homes to commercial developments, Sri Vari Constructions delivers quality, trust and modern design in every project.',
+                btnProjects: 'Our Projects',
+                btnContact: 'Get in Touch',
+                whoWeAreTitle: 'Who We Are',
+                whoWeAreText: 'We are Sri Vari Constructions, a Visakhapatnam-based construction company creating premium residential and commercial spaces. Our team combines decades of experience with careful planning, clear communication and strong local relationships.',
+                reliableBuildersTitle: 'Reliable Builders',
+                reliableBuildersText: 'We handle each phase of construction with precision—from planning and materials to execution and handover.',
+                qualityWorkTitle: 'Quality Work',
+                qualityWorkText: 'Our construction sites maintain high standards, timely delivery and professional workmanship for every project.',
+                customerFocusTitle: 'Customer Focus',
+                customerFocusText: 'We listen to your goals, guide you through options, and build spaces that feel strong, modern and welcoming.',
+                whatWeBringTitle: 'What We Bring',
+                endToEndTitle: 'End-to-end delivery',
+                endToEndText: 'Design support, construction planning, execution and final finishing—all managed by our experienced team.',
+                clearCommunicationTitle: 'Clear communication',
+                clearCommunicationText: 'Regular updates, transparent costing and coordination so you always know what to expect.',
+                trustedWorkmanshipTitle: 'Trusted workmanship',
+                trustedWorkmanshipText: 'Strong foundations, modern materials and careful finishing make every building stand out for durability and style.',
+                projectsTitle: 'Projects We Handle',
+                projectsIntro: 'Click any project to see location details and image previews. Replace the placeholder images with your own project photos when available.',
+                building1Title: 'Building 1',
+                building1Desc: 'Residential complex with modern architecture and premium finishes.',
+                building1Location: 'Visakhapatnam',
+                building1Type: 'Residential',
+                building2Title: 'Building 2',
+                building2Desc: 'Commercial building crafted for strong presence and professional spaces.',
+                building2Location: 'Akkayapalem',
+                building2Type: 'Commercial',
+                building3Title: 'Building 3',
+                building3Desc: 'Renovation project with elegant design and high-quality construction.',
+                building3Location: 'Visakhapatnam',
+                building3Type: 'Renovation',
+                locationLabel: 'Location:',
+                typeLabel: 'Type:',
+                contactTitle: 'Contact',
+                getInTouchTitle: 'Get in touch',
+                getInTouchText: 'Please contact us for estimates, consultations, and project inquiries.',
+                emailLabel: 'Email:',
+                phoneLabel: 'Phone:',
+                addressLabel: 'Address:',
+                projectDetailsTitle: 'Project details',
+                projectDetailsText: 'Tell us what you want to build and we will propose the right plan, schedule, and budget for your site.',
+                modalLocationLabel: 'Project location:',
+                modalTypeLabel: 'Project type:',
+                modalLocationHeading: 'Location details',
+                photoGalleryTitle: 'Photo Gallery'
+            },
+            te: {
+                brandTitle: 'శ్రీ వారీ కన్‌స్ట్రక్షన్స్',
+                brandTagline: 'ఇంట్లకు మరియు వాణిజ్య స్థలాలకు విశ్వసనీయ బిల్డర్స్',
+                heroTitle: 'అందమైన భవిష్యత్తును నిర్మిస్తున్నాం.',
+                heroSubtitle: 'నివాస ఇళ్లు నుండి వాణిజ్య ప్రాజెక్టులకు వరకు, శ్రీ వారీ కన్‌స్ట్రక్షన్స్ ప్రతి ప్రాజెక్టులో నాణ్యత, నమ్మకం మరియు ఆధునిక రూపకల్పనను అందిస్తుంది.',
+                btnProjects: 'మా ప్రాజెక్ట్స్',
+                btnContact: 'సంప్రదించండి',
+                whoWeAreTitle: 'మేమెవరో',
+                whoWeAreText: 'మేము శ్రీ వారీ కన్‌స్ట్రక్షన్స్, విశాఖపట్నం ఆధారంగా ఉన్న సంస్థ, ఉత్తమ నివాస మరియు వాణిజ్య స్థలాలను నిర్మిస్తున్నాం. మా జట్టు అనుభవం, నియోజక సరళంగా పన్నింపు, స్పష్టమైన కమ్యూనికేషన్ మరియు స్థానిక సంబంధాలను కలిగి ఉన్నది.',
+                reliableBuildersTitle: 'నమ్మకమైన బిల్డర్స్',
+                reliableBuildersText: 'ప్యాలనింగ్, సామగ్రిని మరియు అమలును మొదలుకొని హ్యాండోవర్ వరకు ప్రతి దశను ఖచ్చితతతో నిర్వహిస్తాము.',
+                qualityWorkTitle: 'నాణ్యతా పని',
+                qualityWorkText: 'మా సైట్‌లు ప్రతిచోటా ప్రామాణికత, సమయపాలన మరియు వృత్తిపరమైన పనిని నిలిపివేస్తాయి.',
+                customerFocusTitle: 'గ్రాహకుల ఉద్దేశ్యం',
+                customerFocusText: 'మేము మీ లక్ష్యాలను వినేందుకు, ఎంపికలను చూపించేందుకు మరియు బలమైన, ఆధునిక మరియు ఆహ్లాదకరమైన స్థలాలను నిర్మించేందుకు సిద్ధంగా ఉంటాము.',
+                whatWeBringTitle: 'మేము ఏమి తీసుకొస్తాము',
+                endToEndTitle: 'మొదటి దశ నుండి చివర దశ వరకు సరఫరా',
+                endToEndText: 'డిజైన్ సపోర్ట్, నిర్మాణ పథకం, అమలు మరియు తుద ఫినిషింగ్—మా అనుభవజ్ఞులైన జట్టు అందరిలోనూ నిర్వహిస్తుంది.',
+                clearCommunicationTitle: 'స్పష్టమైన కమ్యూనికేషన్',
+                clearCommunicationText: 'నియమిత అప్‌డేట్స్, పారదర్శక ఖర్చు మరియు సమన్వయం మీకు ఎప్పుడూ ఏమి ఆశించాలో తెలియజేస్తుంది.',
+                trustedWorkmanshipTitle: 'నమ్మకమైన పనితీరు',
+                trustedWorkmanshipText: 'బలమైన పునాదులు, ఆధునిక పదార్థాలు మరియు శ్రద్ధగా ముగింపు ప్రతి భవనం నిలకడ మరియు శైలికేతనం కలిగి ఉంటుంది.',
+                projectsTitle: 'మా ప్రాజెక్ట్స్',
+                projectsIntro: 'ప్రతి ప్రాజెక్ట్‌ను క్లిక్ చేసి ప్రదేశ వివరాలు మరియు చిత్రం ముందువీక్షణలు చూడండి. మీ నిజమైన ఫోటోలు అందుబాటులో ఉన్నప్పుడు భర్తీ చిత్రాలను మార్చండి.',
+                building1Title: 'బిల్డింగ్ 1',
+                building1Desc: 'ఆధునిక వాస్తవకళతో మరియు ప్రీమియం ఫినిషులతో కూడిన నివాస సముదాయం.',
+                building1Location: 'విశాఖపట్నం',
+                building1Type: 'నివాస',
+                building2Title: 'బిల్డింగ్ 2',
+                building2Desc: 'బలమైన ఉనికి మరియు వృత్తిపరమైన స్థలాల కోసం రూపొందించిన వాణిజ్య భవనం.',
+                building2Location: 'అక్కాయపాలెం',
+                building2Type: 'వాణిజ్య',
+                building3Title: 'బిల్డింగ్ 3',
+                building3Desc: 'అద్భుతమైన తీర్మానం మరియు ప్రీమియం నిర్మాణంతో పునరుద్ధరణ ప్రాజెక్ట్.',
+                building3Location: 'విశాఖపట్నం',
+                building3Type: 'పునరుద్ధరణ',
+                locationLabel: 'ప్రదేశం:',
+                typeLabel: 'రకం:',
+                contactTitle: 'సంప్రదింపు',
+                getInTouchTitle: 'చేద్దాం',
+                getInTouchText: 'అంచనాలు, సంప్రదింపులు మరియు ప్రాజెక్ట్ విచారణల కోసం దయచేసి మమ్మల్ని సంప్రదించండి.',
+                emailLabel: 'ఇమెయిల్:',
+                phoneLabel: 'ఫోన్:',
+                addressLabel: 'చిరునామా:',
+                projectDetailsTitle: 'ప్రాజెక్ట్ వివరాలు',
+                projectDetailsText: 'మీరు ఏం నిర్మించాలనుకుంటున్నారో మాకు చెప్పండి, మేము సరైన ప్రణాళిక, షెడ్యూల్ మరియు బడ్జెట్‌ను సూచిస్తాము.',
+                modalLocationLabel: 'ప్రాజెక్ట్ ప్రదేశం:',
+                modalTypeLabel: 'ప్రాజెక్ట్ రకం:',
+                photoGalleryTitle: 'ఫోటో గ్యాలరీ'
+            }
+        };
+
+        let currentLang = 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.querySelectorAll('[data-i18n]').forEach((element) => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('.lang-button').forEach((button) => {
+                button.classList.toggle('active', button.getAttribute('data-lang') === lang);
+            });
+        }
+
+        document.querySelectorAll('.lang-button').forEach((button) => {
+            button.addEventListener('click', () => {
+                setLanguage(button.getAttribute('data-lang'));
+            });
+        });
+
+        setLanguage('en');
+
+        const modal = document.getElementById('projectModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalLocationHeading = document.getElementById('modalLocation');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalCity = document.getElementById('modalCity');
+        const modalTypeValue = document.getElementById('modalTypeValue');
+        const modalLocationLabel = document.querySelector('[data-i18n="modalLocationLabel"]');
+        const modalTypeLabel = document.querySelector('[data-i18n="modalTypeLabel"]');
+        const modalGallery = document.getElementById('modalGallery');
+        const modalClose = document.getElementById('modalClose');
+
+        document.querySelectorAll('.project-card').forEach((card) => {
+            card.addEventListener('click', () => {
+                const key = card.dataset.project;
+                const project = projects[key];
+                if (!project) return;
+
+                const lang = currentLang;
+                modalTitle.textContent = translations[lang][`${key}Title`] || project.name;
+                modalLocationHeading.textContent = translations[lang].modalLocationHeading;
+                modalDescription.textContent = translations[lang][`${key}Desc`] || project.description;
+                modalCity.textContent = translations[lang][`${key}Location`] || project.location;
+                modalTypeValue.textContent = translations[lang][`${key}Type`] || project.type;
+                if (modalLocationLabel) modalLocationLabel.textContent = translations[lang].modalLocationLabel;
+                if (modalTypeLabel) modalTypeLabel.textContent = translations[lang].modalTypeLabel;
+                modalGallery.innerHTML = project.images.map(src => `<img src="${src}" alt="${translations[lang][`${key}Title`] || project.name} photo"/>`).join('');
+                modal.classList.add('active');
+            });
+        });
+
+        modalClose.addEventListener('click', () => modal.classList.remove('active'));
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    </script>
 </body>
+
 </html>
