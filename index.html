@@ -445,6 +445,8 @@
         </section>
     </header>
 
+    <audio id="backgroundAudio" src="background_audio.mp3" loop autoplay muted preload="auto" playsinline></audio>
+
     <main>
         <section class="section" id="about">
             <h2 data-i18n="whoWeAreTitle">Who We Are</h2>
@@ -756,6 +758,61 @@
         });
 
         setLanguage('en');
+
+        const backgroundAudio = document.getElementById('backgroundAudio');
+        const audioAllowedKey = 'backgroundAudioAllowed';
+
+        function playBackgroundAudio() {
+            if (!backgroundAudio) return;
+            backgroundAudio.volume = 0.4;
+            backgroundAudio.play().catch(() => {
+                // Autoplay may be blocked; muted autoplay is still requested.
+            });
+        }
+
+        function unmuteBackgroundAudio() {
+            if (!backgroundAudio) return;
+            backgroundAudio.muted = false;
+            backgroundAudio.play().catch(() => {
+                // If still blocked, keep retrying on the next interaction.
+            });
+        }
+
+        function markAudioAllowed() {
+            try {
+                localStorage.setItem(audioAllowedKey, 'true');
+            } catch (e) {
+                // localStorage may be unavailable in some contexts.
+            }
+        }
+
+        const audioAllowed = (() => {
+            try {
+                return localStorage.getItem(audioAllowedKey) === 'true';
+            } catch (e) {
+                return false;
+            }
+        })();
+
+        if (audioAllowed) {
+            unmuteBackgroundAudio();
+        } else {
+            playBackgroundAudio();
+        }
+
+        ['click', 'keydown', 'touchstart'].forEach((eventName) => {
+            document.body.addEventListener(eventName, () => {
+                markAudioAllowed();
+                unmuteBackgroundAudio();
+            }, { once: true });
+        });
+
+        window.addEventListener('focus', playBackgroundAudio);
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) {
+                playBackgroundAudio();
+            }
+        });
 
         const modal = document.getElementById('projectModal');
         const modalTitle = document.getElementById('modalTitle');
